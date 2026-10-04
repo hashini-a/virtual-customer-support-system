@@ -1,0 +1,207 @@
+# Database Design
+
+## 1. Introduction
+
+The database is an important part of the Virtual Customer Support System. It stores and manages information related to students, tickets, support staff, knowledge-base articles, and feedback.
+
+A well-organized database helps the system provide reliable and efficient support.
+
+## 2. Purpose
+
+The main purposes of database management are:
+
+* Store support information
+* Organize student details
+* Store ticket records
+* Maintain knowledge-base information
+* Store feedback
+* Retrieve information quickly
+* Protect important data
+
+## 3. Main Entities
+
+The proposed system contains the following main entities:
+
+1. Student
+2. Ticket
+3. Support Staff
+4. Knowledge Base
+5. Feedback
+
+## 4. Student Table
+
+The Student table stores basic information about students.
+
+| Field      | Description        |
+| ---------- | ------------------ |
+| Student_ID | Unique student ID  |
+| Name       | Student name       |
+| Email      | Student email      |
+| Department | Student department |
+| Password   | Login information  |
+
+## 5. Ticket Table
+
+The Ticket table stores student support requests.
+
+| Field         | Description                    |
+| ------------- | ------------------------------ |
+| Ticket_ID     | Unique ticket ID               |
+| Student_ID    | Student who created the ticket |
+| Problem_Title | Title of the problem           |
+| Description   | Problem details                |
+| Category      | Problem category               |
+| Priority      | Ticket priority                |
+| Status        | Current ticket status          |
+| Staff_ID      | Assigned support staff         |
+| Created_Date  | Ticket creation date           |
+
+## 6. Support Staff Table
+
+This table stores information about support staff.
+
+| Field      | Description      |
+| ---------- | ---------------- |
+| Staff_ID   | Unique staff ID  |
+| Name       | Staff name       |
+| Email      | Staff email      |
+| Department | Staff department |
+| Expertise  | Technical area   |
+
+## 7. Knowledge Base Table
+
+This table stores troubleshooting information.
+
+| Field        | Description                       |
+| ------------ | --------------------------------- |
+| Article_ID   | Unique article ID                 |
+| Title        | Article title                     |
+| Category     | Article category                  |
+| Description  | Problem description               |
+| Solution     | Solution or troubleshooting steps |
+| Updated_Date | Last update date                  |
+
+## 8. Feedback Table
+
+This table stores student feedback.
+
+| Field       | Description                |
+| ----------- | -------------------------- |
+| Feedback_ID | Unique feedback ID         |
+| Ticket_ID   | Related ticket             |
+| Student_ID  | Student providing feedback |
+| Rating      | Rating from 1 to 5         |
+| Comment     | Student comments           |
+| Date        | Feedback date              |
+
+## 9. Database Relationships
+
+The basic relationships are:
+
+```text id="m5gqxt"
+Student
+   |
+   | creates
+   v
+Ticket
+   |
+   | assigned to
+   v
+Support Staff
+
+Ticket
+   |
+   | receives
+   v
+Feedback
+
+Knowledge Base
+   |
+   | provides solutions for
+   v
+Common Problems
+```
+
+## 10. Data Flow
+
+```text id="i7c8lc"
+Student
+   ↓
+Create Ticket
+   ↓
+Ticket Database
+   ↓
+Support Staff
+   ↓
+Solution
+   ↓
+Ticket Updated
+   ↓
+Feedback
+   ↓
+Feedback Database
+```
+
+## 11. Database Security
+
+The database should be protected using:
+
+* User authentication
+* Password protection
+* Access control
+* Regular backups
+* Data validation
+* Secure database connections
+
+Only authorized users should be allowed to access or modify important information.
+
+## 12. Data Backup
+
+Regular backups should be performed to prevent data loss.
+
+Backup methods can include:
+
+* Daily backups
+* Weekly full backups
+* Cloud backup
+* Recovery procedures
+
+## 13. Data Management
+
+The system should maintain accurate and organized data.
+
+Important practices include:
+
+* Avoid duplicate records
+* Validate user input
+* Keep ticket history
+* Update outdated knowledge-base articles
+* Remove unnecessary data when appropriate
+
+## 14. Scalability
+
+The database should be designed so that it can support an increasing number of:
+
+* Students
+* Tickets
+* Support staff
+* Knowledge articles
+* Feedback records
+
+A scalable database allows the system to grow without major changes.
+
+## 15. Benefits
+
+A properly designed database provides:
+
+* Organized information
+* Faster data retrieval
+* Better ticket tracking
+* Reliable record keeping
+* Improved security
+* Easier reporting
+* Better system performance
+
+## 16. Conclusion
+
+The database design provides the foundation for the Virtual Customer Support System. It connects students, tickets, support staff, knowledge-base articles, and feedback in an organized manner. Proper security, backup, and scalability can make the system reliable for academic use.
